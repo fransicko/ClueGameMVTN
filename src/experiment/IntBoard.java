@@ -26,10 +26,22 @@ public class IntBoard {
 	}
 
 	public void calcAdjacencies() {
-		
+		return;
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
-		
+		return;
+	}
+	
+	public Set<BoardCell> getTargets() {
+		return null;
+	}
+	
+	public Set<BoardCell> getAdjList(BoardCell cell) {
+		return null;
+	}
+	
+	public BoardCell getCell(int row, int col) {
+		return grid[row][col];
 	}
 }
