@@ -1,3 +1,4 @@
+// comment to test git
 package tests;
 
 import static org.junit.Assert.*;
@@ -16,7 +17,7 @@ public class IntBoardTests {
 	public void setUp() {
 		board = new IntBoard(4,4);
 	}
-
+	
 	@Test
 	public void testAdjacency0() {
 		BoardCell cell = board.getCell(0,0);
