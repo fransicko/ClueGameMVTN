@@ -31,12 +31,24 @@ public class IntBoard {
 	}
 
 	public void calcAdjacencies() {
-		Set<BoardCell> adj = new HashSet<BoardCell>();
 		// We first find good values then we will add them later
 		for (BoardCell i: visited) {
+			Set<BoardCell> adj = new HashSet<BoardCell>();
+			
 			if (i.getRow()+1 < rowBounds) {
 				adj.add(grid[i.getRow()+1][i.getColumn()]);
 			}
+			if (i.getRow()-1 >= 0) {
+				adj.add(grid[i.getRow()-1][i.getColumn()]);
+			}
+			if (i.getColumn()+1 < colBounds) {
+				adj.add(grid[i.getRow()][i.getColumn()+1]);
+			}
+			if (i.getColumn()-1 >= 0) {
+				adj.add(grid[i.getRow()][i.getColumn()-1]);
+			}
+			
+			adjMtx.put(i, adj);
 		}
 		return;
 	}
