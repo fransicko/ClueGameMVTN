@@ -23,7 +23,9 @@ public class Board {
 		return theInstance;
 	}
 	
+	// This will setup the board
 	public void initialize() {
+		
 		return;
 	}
 	
