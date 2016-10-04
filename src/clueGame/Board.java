@@ -12,5 +12,10 @@ public class Board {
 	private BoardCell[][] board;
 	private Map<Character, String> rooms;
 	private Map<BoardCell, Set<BoardCell>> adjMatrix;
+	private Set<BoardCell> targets;
+	private String boardConfigFile;
+	private String roomConfigFile;
+	
+	public void getInstance()
 
 }
