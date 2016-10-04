@@ -42,5 +42,11 @@ public class clueBoardTests {
 		assertEquals("Pool room", rooms.get('P'));
 		assertEquals("Library", rooms.get('L'));
 	}
+	@Test
+	public void testSize() {
+		// Tests the size of the array
+		assertEquals(NUM_ROWS, board.getNumRows());
+		assertEquals(NUM_COLUMNS, board.getNumColumns());
+	}
 
 }
