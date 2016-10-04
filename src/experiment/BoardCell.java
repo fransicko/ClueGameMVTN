@@ -4,13 +4,14 @@ public class BoardCell {
 	private int row;
 	private int column;
 	private char initial;
-	private enum DoorDirection {UP, DOWN, LEFT, RIGHT, NONE}
+	private DoorDirection door;
 	
-	public BoardCell(int row, int column, char initial) {
+	public BoardCell(int row, int column, char initial, DoorDirection door) {
 		super();
 		this.row = row;
 		this.column = column;
 		this.initial = initial;
+		this.door = door;
 	}
 
 	public int getRow() {
@@ -36,7 +37,10 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		
+		if (door == DoorDirection.NONE) {
+			return false;
+		}
+		return true;
 	}
 	
 }
