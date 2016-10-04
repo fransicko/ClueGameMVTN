@@ -42,5 +42,10 @@ public class Board {
 	public BoardCell getCellAt(int i, int j) {
 		return board[i][j];
 	}
+	public void setConfigFiles(String string, String string2) {
+		boardConfigFile = string;
+		roomConfigFile = string2;
+		
+	}
 
 }
