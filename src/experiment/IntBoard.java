@@ -56,7 +56,20 @@ public class IntBoard {
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
-		
+		visited.add(startCell);
+		for (BoardCell i: adjMtx.get(startCell)) {
+			if (!visited.contains(i)) {
+				visited.add(i);
+				if (pathLength == 1) {
+					targets.add(i);
+					visited.remove(i);
+				}
+				else {
+					calcTargets(i, pathLength-1);
+				}
+			}
+		}
+		visited.remove(startCell);
 		return;
 	}
 	

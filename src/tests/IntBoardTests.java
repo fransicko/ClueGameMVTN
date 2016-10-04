@@ -82,7 +82,8 @@ public class IntBoardTests {
 		assertEquals(2, targets.size());
 		assertTrue(targets.contains(board.getCell(1, 0)));
 		assertTrue(targets.contains(board.getCell(0, 1)));
-	}@Test
+	}
+	@Test
 	public void testTargets0_2()
 	{
 		BoardCell cell = board.getCell(0, 0);
