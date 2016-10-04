@@ -1,4 +1,4 @@
-package experiment;
+package clueGame;
 
 public enum DoorDirection {
 	UP("Up"), DOWN("Down"), LEFT("Left"), RIGHT("Right"), NONE("None");

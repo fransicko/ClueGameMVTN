@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import clueGame.BoardCell;
+
 public class IntBoard {
 	// the key is the current cell and the values are the Adjacent cells
 	private Map<BoardCell, Set<BoardCell>> adjMtx; 
