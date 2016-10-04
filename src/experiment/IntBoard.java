@@ -31,31 +31,32 @@ public class IntBoard {
 	}
 
 	public void calcAdjacencies() {
-		// We first find good values then we will add them later
-		for (BoardCell i: visited) {
-			Set<BoardCell> adj = new HashSet<BoardCell>();
-			
-			if (i.getRow()+1 < rowBounds) {
-				adj.add(grid[i.getRow()+1][i.getColumn()]);
+		for (int i = 0; i < rowBounds; ++i) {
+			for (int j = 0; j < colBounds; ++j) {
+				Set<BoardCell> adj = new HashSet<BoardCell>();
+				if (i-1 >= 0) {
+					adj.add(grid[i-1][j]);
+				}
+				if (i+1 < rowBounds) {
+					adj.add(grid[i+1][j]);
+				}
+				if (j+1 < colBounds) {
+					adj.add(grid[i][j+1]);
+				}
+				if (j-1 >= 0) {
+					adj.add(grid[i][j-1]);
+				}
+				
+				adjMtx.put(grid[i][j], new HashSet<BoardCell>(adj));
+				adj.clear();
 			}
-			if (i.getRow()-1 >= 0) {
-				adj.add(grid[i.getRow()-1][i.getColumn()]);
-			}
-			if (i.getColumn()+1 < colBounds) {
-				adj.add(grid[i.getRow()][i.getColumn()+1]);
-			}
-			if (i.getColumn()-1 >= 0) {
-				adj.add(grid[i.getRow()][i.getColumn()-1]);
-			}
-			
-			adjMtx.put(i, adj);
 		}
+		
 		return;
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
-		// First we calculate the adjancient cells
-		calcAdjacencies();
+		
 		return;
 	}
 	
@@ -64,7 +65,7 @@ public class IntBoard {
 	}
 	
 	public Set<BoardCell> getAdjList(BoardCell cell) {
-		return null;
+		return adjMtx.get(cell);
 	}
 	
 	public BoardCell getCell(int row, int col) {

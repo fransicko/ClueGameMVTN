@@ -16,6 +16,7 @@ public class IntBoardTests {
 	@Before
 	public void setUp() {
 		board = new IntBoard(4,4);
+		board.calcAdjacencies();
 	}
 	
 	@Test
