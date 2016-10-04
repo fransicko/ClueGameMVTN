@@ -2,6 +2,8 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.Map;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,10 +28,19 @@ public class clueBoardTests {
 		// Initialize will load BOTH config files 
 		board.initialize();
 	}
-
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testLegend() {
+		Map<Character, String> rooms = board.getRooms();
+
+		// THis will test to see if there are LEGEND_SIZE rooms
+		assertEquals(LEGEND_SIZE, rooms.size());
+		
+		// Checks to make sure the rooms are mapped to the correct character
+		assertEquals("Gym", rooms.get('G'));
+		assertEquals("Living Room", rooms.get('R'));
+		assertEquals("Closet", rooms.get('X'));
+		assertEquals("Pool room", rooms.get('P'));
+		assertEquals("Library", rooms.get('L'));
 	}
 
 }

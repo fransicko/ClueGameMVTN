@@ -25,7 +25,6 @@ public class Board {
 	
 	// This will setup the board
 	public void initialize() {
-		
 		return;
 	}
 	
@@ -49,5 +48,23 @@ public class Board {
 		roomConfigFile = string2;
 		
 	}
+	
+	// These are the getters which will be used for the tests and mabye other things down the line
+	public int getNumRows() {
+		return numRows;
+	}
+	public int getNumColumns() {
+		return numColumns;
+	}
+	public Map<Character, String> getRooms() {
+		return rooms;
+	}
+	public Map<BoardCell, Set<BoardCell>> getAdjMatrix() {
+		return adjMatrix;
+	}
+	public Set<BoardCell> getTargets() {
+		return targets;
+	}
+	
 
 }
