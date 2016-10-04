@@ -22,5 +22,22 @@ public class Board {
 	public static Board getInstance() {
 		return theInstance;
 	}
+	
+	public void initialize() {
+		return;
+	}
+	
+	public void loadRoomConfig() {
+		return;
+	}
+	public void loadBoardConfig() {
+		return;
+	}
+	public void calcAdjacencies() {
+		return;
+	}
+	public void calcTargets(BoardCell cell, int pathLength) {
+		return;
+	}
 
 }
