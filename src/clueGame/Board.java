@@ -39,5 +39,8 @@ public class Board {
 	public void calcTargets(BoardCell cell, int pathLength) {
 		return;
 	}
+	public BoardCell getCellAt(int i, int j) {
+		return board[i][j];
+	}
 
 }
