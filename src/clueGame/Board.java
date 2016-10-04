@@ -16,6 +16,13 @@ public class Board {
 	private String boardConfigFile;
 	private String roomConfigFile;
 	
-	public void getInstance()
+	// variable used for singleton pattern
+	private static Board theInstance = new Board();
+	// ctor is private to ensure only one can be created
+	private Board() {}
+	// this method returns the only Board
+	public static Board getInstance() {
+		return theInstance;
+	}
 
 }
