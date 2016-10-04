@@ -1,10 +1,10 @@
-Lr, Living room, card
+R, Living room, card
 K, Kitchen, card
 P, Pool room, card
-Ga, Garage, card
+A, Garage, card
 O, Office, card
 G, Gym, card
-Gr. Guest room, card
+C. Guest room, card
 B, Bed room, card
 L, Library, card
 W, Walkway, other
