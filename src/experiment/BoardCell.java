@@ -4,6 +4,7 @@ public class BoardCell {
 	private int row;
 	private int column;
 	private char initial;
+	private enum DoorDirection {UP, DOWN, LEFT, RIGHT, NONE}
 	
 	public BoardCell(int row, int column, char initial) {
 		super();
