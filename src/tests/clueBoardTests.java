@@ -64,6 +64,10 @@ public class clueBoardTests {
 
 		door = board.getCellAt(2, 20);
 		assertEquals(DoorDirection.LEFT, door.getDoorDirection());
+		
+		// This will make sure that a cell is not a board
+		door = board.getCellAt(5, 5);
+		assertEquals(false, door.isDoorway());
 	}
 
 }
