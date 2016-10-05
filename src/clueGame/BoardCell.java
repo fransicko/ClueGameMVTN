@@ -22,6 +22,10 @@ public class BoardCell {
 		return column;
 	}
 	
+	public char getInitial() {
+		return initial;
+	}
+
 	public boolean isWalkway() {
 		if (initial == 'W') {
 			return true;
