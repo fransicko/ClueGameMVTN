@@ -16,6 +16,7 @@ public class clueBoardTests {
 		public static final int LEGEND_SIZE = 11;
 		public static final int NUM_ROWS = 26;
 		public static final int NUM_COLUMNS = 26;
+		public static final int NUM_DOORS = 13;
 		
 		// We are using the same method of set up as the example code due to that seeming like
 		// the fastest way
@@ -68,6 +69,21 @@ public class clueBoardTests {
 		// This will make sure that a cell is not a board
 		door = board.getCellAt(5, 5);
 		assertEquals(false, door.isDoorway());
+	}
+	//Test to see that there are the correct number of doors
+	@Test
+	public void numDoors() {
+		int door = 0;
+		
+		for (BoardCell[] i: board.getBoard()) {
+			for (BoardCell j: i) {
+				if (j.isDoorway()) {
+					++door;
+				}
+			}
+		}
+		
+		assertEquals(NUM_DOORS, door);
 	}
 
 }

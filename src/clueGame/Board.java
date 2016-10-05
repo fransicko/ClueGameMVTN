@@ -65,6 +65,9 @@ public class Board {
 	public Set<BoardCell> getTargets() {
 		return targets;
 	}
+	public BoardCell[][] getBoard() {
+		return board;
+	}
 	
 
 }
