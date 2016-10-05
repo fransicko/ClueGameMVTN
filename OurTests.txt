@@ -1,0 +1,9 @@
+- For the BeforeClass method i decided to go with it since it seemed like the faster method for setting up.
+- For testLegend i used my rooms map and get the size of it since the number of keys should be the same as
+our legend size.
+- Nothing much for testing size.
+- For testing the four directions i just opened my excel sheet and looked for some doors that were close
+together.
+- For number of doors i wanted to loop through our Board board's board cells so i used the iterate over method
+of the for loop and from there i was able to find the number of doors.
+- Initial check i used somewhat random values spread out accross the board.
