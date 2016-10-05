@@ -8,6 +8,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import clueGame.Board;
+import clueGame.BoardCell;
+import clueGame.DoorDirection;
 
 public class clueBoardTests {
 	// Constants that I will use to test whether the file was loaded correctly
@@ -47,6 +49,21 @@ public class clueBoardTests {
 		// Tests the size of the array
 		assertEquals(NUM_ROWS, board.getNumRows());
 		assertEquals(NUM_COLUMNS, board.getNumColumns());
+	}
+	// This will test to make sure that there are doors that open in all directions
+	@Test
+	public void FourDoors() {
+		BoardCell door = board.getCellAt(11, 2);
+		assertEquals(DoorDirection.RIGHT, door.getDoorDirection());
+
+		door = board.getCellAt(5, 9);
+		assertEquals(DoorDirection.UP, door.getDoorDirection());
+		
+		door = board.getCellAt(2, 10);
+		assertEquals(DoorDirection.DOWN, door.getDoorDirection());
+
+		door = board.getCellAt(2, 20);
+		assertEquals(DoorDirection.LEFT, door.getDoorDirection());
 	}
 
 }
