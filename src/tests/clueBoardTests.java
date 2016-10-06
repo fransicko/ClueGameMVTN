@@ -33,7 +33,7 @@ public class clueBoardTests {
 	}
 	@Test
 	public void testLegend() {
-		Map<Character, String> rooms = board.getRooms();
+		Map<Character, String> rooms = board.getLegend();
 
 		// THis will test to see if there are LEGEND_SIZE rooms
 		assertEquals(LEGEND_SIZE, rooms.size());

@@ -104,7 +104,7 @@ public class Board {
 	public int getNumColumns() {
 		return numColumns;
 	}
-	public Map<Character, String> getRooms() {
+	public Map<Character, String> getLegend() {
 		return rooms;
 	}
 	public Map<BoardCell, Set<BoardCell>> getAdjMatrix() {
