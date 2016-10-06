@@ -40,11 +40,11 @@ public class clueBoardTests {
 		assertEquals(LEGEND_SIZE, rooms.size());
 		
 		// Checks to make sure the rooms are mapped to the correct character
-		assertEquals("Gym", rooms.get('G'));
-		assertEquals("Living Room", rooms.get('R'));
-		assertEquals("Closet", rooms.get('X'));
-		assertEquals("Pool room", rooms.get('P'));
-		assertEquals("Library", rooms.get('L'));
+		equals("Gym".equals(rooms.get('G')));
+		equals("Living Room".equals(rooms.get('R')));
+		equals("Closet".equals(rooms.get('X')));
+		equals("Pool room".equals(rooms.get('P')));
+		equals("Library".equals(rooms.get('L')));
 	}
 	@Test
 	public void testSize() {
