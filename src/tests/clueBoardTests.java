@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.io.FileNotFoundException;
 import java.util.Map;
 
 import org.junit.BeforeClass;
@@ -23,7 +24,7 @@ public class clueBoardTests {
 		private static Board board;
 	
 	@BeforeClass
-	public static void setUp() {
+	public static void setUp() throws FileNotFoundException {
 		// Board is singleton, get the only instance
 		board = Board.getInstance();
 		// set the file names to use our config files

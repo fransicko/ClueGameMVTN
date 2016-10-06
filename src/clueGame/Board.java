@@ -34,6 +34,10 @@ public class Board {
 	// This will setup the board/ csv
 	public void initialize() throws FileNotFoundException {
 		rooms = new HashMap<>();
+		targets = new HashSet<>();
+		visited = new HashSet<>();
+		adjMatrix = new HashMap<>();
+		
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
 		
@@ -60,6 +64,7 @@ public class Board {
 		line.close();
 		
 		// This will set up the adjmatrix
+		board = new BoardCell[numRows][numColumns];
 		calcAdjacencies();
 		
 		return;
