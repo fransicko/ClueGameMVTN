@@ -91,7 +91,7 @@ public class clueBoardTests {
 		assertEquals('X', board.getCellAt(0, 0).getInitial());
 
 		assertEquals('W', board.getCellAt(0, 5).getInitial());
-		assertEquals('B', board.getCellAt(1, 9).getInitial());
+		assertEquals('R', board.getCellAt(1, 9).getInitial());
 		assertEquals('C', board.getCellAt(21, 11).getInitial());
 		assertEquals('A', board.getCellAt(13, 22).getInitial());
 		assertEquals('O', board.getCellAt(23, 23).getInitial());
