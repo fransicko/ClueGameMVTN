@@ -7,4 +7,5 @@ public enum DoorDirection {
 	DoorDirection (String val) {
 		value = val;
 	}
+	
 }

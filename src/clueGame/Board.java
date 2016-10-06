@@ -1,6 +1,7 @@
 package clueGame;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -31,14 +32,37 @@ public class Board {
 	}
 	
 	// This will setup the board/ csv
-	public void initialize() {
+	public void initialize() throws FileNotFoundException {
 		rooms = new HashMap<>();
+		FileReader csv = new FileReader(boardConfigFile);
+		Scanner line = new Scanner(csv);
+		
+		int i = 0; //This will be what we use to store our max row values as
+		while (line.hasNextLine()) {
+			int j = 0;	//This is what we will use to store our max column
+			String ln = line.nextLine();
+			String[] a = ln.split(",");
+			
+			// We will go through our array of strings and place them into our board
+			for (String k :a) {
+				// NOTE: we have to see if the string has two characters in it
+				if (k.length() == 2) {
+					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.valueOf(String.valueOf(k.charAt(1))));
+
+				}
+				else {
+					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
+				}
+			}
+				
+		}
+		
 		return;
 	}
 	
 	
 	// load in the legend
-	public void loadRoomConfig() {
+	public void loadRoomConfig() throws FileNotFoundException {
 		FileReader reader = new FileReader(roomConfigFile);
 		Scanner legend = new Scanner(reader);
 		legend.useDelimiter(" ");
