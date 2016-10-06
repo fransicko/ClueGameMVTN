@@ -40,9 +40,8 @@ public class Board {
 		
 		// We don't know how big the board is before hand so we have to use
 		// this variable to allocate memory for the board
-		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		BoardCell[][] newBoard = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 		loadRoomConfig();
-		
 		
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
@@ -60,21 +59,21 @@ public class Board {
 					String k1 = String.valueOf(k.charAt(1));
 					switch (k1) {
 					case "U":
-						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.UP);
+						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.UP);
 						break;
 					case "D":
-						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.DOWN);
+						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.DOWN);
 						break;
 					case "R":
-						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.RIGHT);
+						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.RIGHT);
 						break;
 					case "L":
-						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.LEFT);
+						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.LEFT);
 						break;
 					}
 				}
 				else {
-					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
+					newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
 				}
 				++j;
 			}
@@ -82,6 +81,17 @@ public class Board {
 			++i;
 		}
 		numRows = i;
+		
+		// This is to ensure that our board has no null values in it
+		board = new BoardCell[numRows][numColumns];
+		for (int k = 0; k < numRows; ++k) {
+			for (int l = 0; l < numColumns; ++l) {
+				if (newBoard[k][l] != null) {
+					board[k][l] = new BoardCell(newBoard[k][l].getRow(), newBoard[k][l].getColumn(), newBoard[k][l].getInitial(), newBoard[k][l].getDoorDirection());
+				}
+			}
+		}
+		
 		line.close();
 		
 		// This will set up the adjmatrix
@@ -95,11 +105,10 @@ public class Board {
 	public void loadRoomConfig() throws FileNotFoundException {
 		FileReader reader = new FileReader(roomConfigFile);
 		Scanner legend = new Scanner(reader);
-		legend.useDelimiter(" ");
 		while (legend.hasNextLine()) {
 			String ln = legend.nextLine();
 			String[] a = ln.split(",");
-			rooms.put(a[0].charAt(0), a[1]);
+			rooms.put(a[0].charAt(0), a[1].substring(1));
 		}
 		
 		legend.close();
