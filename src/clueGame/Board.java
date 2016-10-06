@@ -28,6 +28,7 @@ public class Board {
 	
 	// This will setup the board
 	public void initialize() {
+		
 		return;
 	}
 	
@@ -112,6 +113,8 @@ public class Board {
 	public Set<BoardCell> getAdjList(BoardCell cell) {
 		return adjMatrix.get(cell);
 	}
-	
+	public BoardCell getCell(int row, int col) {
+		return board[row][col];
+	}
 
 }
