@@ -59,6 +59,9 @@ public class Board {
 		numRows = i;
 		line.close();
 		
+		// This will set up the adjmatrix
+		calcAdjacencies();
+		
 		return;
 	}
 	
