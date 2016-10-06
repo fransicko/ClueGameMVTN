@@ -38,6 +38,11 @@ public class Board {
 		visited = new HashSet<>();
 		adjMatrix = new HashMap<>();
 		
+		// We don't know how big the board is before hand so we have to use
+		// this variable to allocate memory for the board
+		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		
+		
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
 		
@@ -64,7 +69,6 @@ public class Board {
 		line.close();
 		
 		// This will set up the adjmatrix
-		board = new BoardCell[numRows][numColumns];
 		calcAdjacencies();
 		
 		return;
