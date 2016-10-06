@@ -26,7 +26,7 @@ public class CR_ExceptionTests {
 		// This is necessary because initialize contains a try-catch. 
 		board.loadRoomConfig();
 		// This one should throw an exception
-		board.loadBoardConfig();
+		board.theInstance.numRows();
 	}
 	
 	// Test that an exception is thrown for a config file that specifies 
@@ -36,7 +36,7 @@ public class CR_ExceptionTests {
 		Board board = Board.getInstance();
 		board.setConfigFiles("CR_ClueLayoutBadRoom.csv", "CR_ClueLegend.txt");
 		board.loadRoomConfig();
-		board.loadBoardConfig();
+		board.theInstance.numRows();
 	}
 	
 	// Test that an exception is thrown for a config file with a room type 

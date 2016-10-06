@@ -31,57 +31,12 @@ public class IntBoard {
 		targets = new HashSet<BoardCell>();
 		adjMtx = new HashMap<BoardCell, Set<BoardCell>>();
 	}
-
-	public void calcAdjacencies() {
-		for (int i = 0; i < rowBounds; ++i) {
-			for (int j = 0; j < colBounds; ++j) {
-				Set<BoardCell> adj = new HashSet<BoardCell>();
-				if (i-1 >= 0) {
-					adj.add(grid[i-1][j]);
-				}
-				if (i+1 < rowBounds) {
-					adj.add(grid[i+1][j]);
-				}
-				if (j+1 < colBounds) {
-					adj.add(grid[i][j+1]);
-				}
-				if (j-1 >= 0) {
-					adj.add(grid[i][j-1]);
-				}
-				
-				adjMtx.put(grid[i][j], new HashSet<BoardCell>(adj));
-				adj.clear();
-			}
-		}
-		
-		return;
-	}
-	
-	public void calcTargets(BoardCell startCell, int pathLength) {
-		visited.add(startCell);
-		for (BoardCell i: adjMtx.get(startCell)) {
-			if (!visited.contains(i)) {
-				visited.add(i);
-				if (pathLength == 1) {
-					targets.add(i);
-					visited.remove(i);
-				}
-				else {
-					calcTargets(i, pathLength-1);
-				}
-			}
-		}
-		visited.remove(startCell);
-		return;
-	}
 	
 	public Set<BoardCell> getTargets() {
 		return targets;
 	}
 	
-	public Set<BoardCell> getAdjList(BoardCell cell) {
-		return adjMtx.get(cell);
-	}
+	
 	
 	public BoardCell getCell(int row, int col) {
 		return grid[row][col];
