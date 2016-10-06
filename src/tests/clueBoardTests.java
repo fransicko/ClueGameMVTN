@@ -27,7 +27,7 @@ public class clueBoardTests {
 		// Board is singleton, get the only instance
 		board = Board.getInstance();
 		// set the file names to use our config files
-		board.setConfigFiles("MT_ClueLayout.xlsx", "MT_Legend.txt");		
+		board.setConfigFiles("MT_ClueLayout.csv", "MT_Legend.txt");		
 		// Initialize will load BOTH config files 
 		board.initialize();
 	}
