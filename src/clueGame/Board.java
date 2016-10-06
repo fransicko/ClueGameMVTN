@@ -48,14 +48,16 @@ public class Board {
 				// NOTE: we have to see if the string has two characters in it
 				if (k.length() == 2) {
 					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.valueOf(String.valueOf(k.charAt(1))));
-
 				}
 				else {
 					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
 				}
+				++j;
 			}
-				
+			numColumns = j;
 		}
+		numRows = i;
+		line.close();
 		
 		return;
 	}
