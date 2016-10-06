@@ -41,6 +41,7 @@ public class Board {
 		// We don't know how big the board is before hand so we have to use
 		// this variable to allocate memory for the board
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		loadRoomConfig();
 		
 		
 		FileReader csv = new FileReader(boardConfigFile);
@@ -100,6 +101,7 @@ public class Board {
 			rooms.put(a[0].charAt(0), a[1]);
 		}
 		
+		legend.close();
 		return;
 	}
 	
