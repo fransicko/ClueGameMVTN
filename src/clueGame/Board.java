@@ -1,16 +1,20 @@
 package clueGame;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import com.sun.java_cup.internal.runtime.Scanner;
 
 public class Board {
 	public static final int MAX_BOARD_SIZE = 50;
 	private int numRows;
 	private int numColumns;
 	private BoardCell[][] board;
-	private Map<Character, String> rooms;
+	private Map<Character, String> rooms; // map for legend
 	private Map<BoardCell, Set<BoardCell>> adjMatrix;
 	private Set<BoardCell> targets;
 	private Set<BoardCell> visited;
@@ -26,15 +30,21 @@ public class Board {
 		return theInstance;
 	}
 	
-	// This will setup the board
+	// This will setup the board/ csv
 	public void initialize() {
 		
 		return;
 	}
 	
+	
+	// load in the legend
 	public void loadRoomConfig() {
+		FileReader reader = new Filereader(roomConfigFile);
+		Scanner legend = new Scanner(reader);
+		
 		return;
 	}
+	
 	public void calcAdjacencies() {
 		for (int i = 0; i < numRows; ++i) {
 			for (int j = 0; j < numColumns; ++j) {
