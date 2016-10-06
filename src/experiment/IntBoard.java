@@ -38,7 +38,5 @@ public class IntBoard {
 	
 	
 	
-	public BoardCell getCell(int row, int col) {
-		return grid[row][col];
-	}
+	
 }

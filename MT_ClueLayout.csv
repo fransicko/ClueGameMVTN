@@ -10,7 +10,7 @@
 9,W,B,B,W,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,W,W,W,W,W,W
 10,B,B,B,B,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,W,W,W,W,W,W
 11,B,B,B,B,W,W,W,W,W,PL,P,P,P,W,G,G,W,W,W,W,W,W,A,A,A,A
-12,B,B,BL,W,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,W,A,A,A,A,A
+12,B,B,BR,W,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,W,A,A,A,A,A
 13,B,B,B,B,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,A,A,A,A,A,A
 14,B,B,B,B,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,AL,A,A,A,A,A
 15,W,B,B,W,W,W,W,W,W,P,P,P,P,W,G,G,W,W,W,W,A,A,A,A,A,A
@@ -19,7 +19,7 @@
 18,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W
 19,L,W,W,L,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W
 20,L,W,W,L,W,W,W,W,W,W,W,C,C,W,W,W,W,W,W,W,W,W,W,W,W,W
-21,L,L,L,LL,W,W,W,W,W,W,C,C,C,C,W,W,W,W,W,W,W,W,W,O,O,O
+21,L,L,L,LR,W,W,W,W,W,W,C,C,C,C,W,W,W,W,W,W,W,W,W,O,O,O
 22,L,L,L,L,W,W,W,W,W,C,C,C,C,C,C,W,W,W,W,W,W,OU,O,O,O,O
 23,L,W,W,L,W,W,W,W,W,C,C,C,C,C,C,W,W,W,W,W,W,O,O,O,O,O
 24,L,W,W,L,W,W,W,W,W,W,C,C,C,C,W,W,W,W,W,W,O,O,O,O,O,O
