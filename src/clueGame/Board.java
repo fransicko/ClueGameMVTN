@@ -79,6 +79,7 @@ public class Board {
 				++j;
 			}
 			numColumns = j;
+			++i;
 		}
 		numRows = i;
 		line.close();
