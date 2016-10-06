@@ -56,7 +56,21 @@ public class Board {
 			for (String k :a) {
 				// NOTE: we have to see if the string has two characters in it
 				if (k.length() == 2) {
-					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.valueOf(String.valueOf(k.charAt(1))));
+					String k1 = String.valueOf(k.charAt(1));
+					switch (k1) {
+					case "U":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.UP);
+						break;
+					case "D":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.DOWN);
+						break;
+					case "R":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.RIGHT);
+						break;
+					case "L":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.LEFT);
+						break;
+					}
 				}
 				else {
 					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
