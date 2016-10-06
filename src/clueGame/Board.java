@@ -5,9 +5,9 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
-import com.sun.java_cup.internal.runtime.Scanner;
 
 public class Board {
 	public static final int MAX_BOARD_SIZE = 50;
@@ -32,15 +32,21 @@ public class Board {
 	
 	// This will setup the board/ csv
 	public void initialize() {
-		
+		rooms = new HashMap<>();
 		return;
 	}
 	
 	
 	// load in the legend
 	public void loadRoomConfig() {
-		FileReader reader = new Filereader(roomConfigFile);
+		FileReader reader = new FileReader(roomConfigFile);
 		Scanner legend = new Scanner(reader);
+		legend.useDelimiter(" ");
+		while (legend.hasNextLine()) {
+			String ln = legend.nextLine();
+			String[] a = ln.split(",");
+			rooms.put(a[0].charAt(0), a[1]);
+		}
 		
 		return;
 	}
