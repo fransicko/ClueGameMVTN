@@ -32,7 +32,7 @@ public class Board {
 	}
 	
 	// This will setup the board/ csv
-	public void initialize() throws FileNotFoundException {
+	public void initialize() throws FileNotFoundException, BadConfigFormatException {
 		rooms = new HashMap<>();
 		targets = new HashSet<>();
 		visited = new HashSet<>();
@@ -41,11 +41,16 @@ public class Board {
 		// We don't know how big the board is before hand so we have to use
 		// this variable to allocate memory for the board
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
-		loadRoomConfig();
-		loadBoardConfig();
-		
+		try{
+			loadRoomConfig();
+			loadBoardConfig();
+		} catch (BadConfigFormatException e) {
+			e.fillInStackTrace();
+		}
 		// This will set up the adjmatrix
 		calcAdjacencies();
+		
+		
 		
 		return;
 	}
@@ -65,7 +70,7 @@ public class Board {
 		return;
 	}
 	
-	public void loadRoomConfig() throws FileNotFoundException {
+	public void loadRoomConfig() throws FileNotFoundException, BadConfigFormatException {
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
 		
@@ -103,8 +108,17 @@ public class Board {
 				}
 				++j;
 			}
-			numColumns = j;
-			++i;
+			if(i != 0) {
+				if (numColumns != j) {
+					throw new BadConfigFormatException();
+				}
+				else {
+					++i;
+				}
+			}
+			else {
+				numColumns = j;
+			}
 		}
 		numRows = i;
 	}
