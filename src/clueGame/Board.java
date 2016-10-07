@@ -43,6 +43,7 @@ public class Board {
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 		loadRoomConfig();
 		loadBoardConfig();
+		
 		// This will set up the adjmatrix
 		calcAdjacencies();
 		
