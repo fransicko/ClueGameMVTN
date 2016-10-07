@@ -52,7 +52,7 @@ public class Board {
 	
 	
 	// load in the legend
-	public void loadRoomConfig() throws FileNotFoundException {
+	public void loadBoardConfig() throws FileNotFoundException {
 		FileReader reader = new FileReader(roomConfigFile);
 		Scanner legend = new Scanner(reader);
 		while (legend.hasNextLine()) {
@@ -65,7 +65,7 @@ public class Board {
 		return;
 	}
 	
-	public void loadBoardConfig() throws FileNotFoundException {
+	public void loadRoomConfig() throws FileNotFoundException {
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
 		
