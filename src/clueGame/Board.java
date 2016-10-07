@@ -40,61 +40,9 @@ public class Board {
 		
 		// We don't know how big the board is before hand so we have to use
 		// this variable to allocate memory for the board
-		BoardCell[][] newBoard = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 		loadRoomConfig();
-		
-		FileReader csv = new FileReader(boardConfigFile);
-		Scanner line = new Scanner(csv);
-		
-		int i = 0; //This will be what we use to store our max row values as
-		while (line.hasNextLine()) {
-			int j = 0;	//This is what we will use to store our max column
-			String ln = line.nextLine();
-			String[] a = ln.split(",");
-			
-			// We will go through our array of strings and place them into our board
-			for (String k :a) {
-				// NOTE: we have to see if the string has two characters in it
-				if (k.length() == 2) {
-					String k1 = String.valueOf(k.charAt(1));
-					switch (k1) {
-					case "U":
-						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.UP);
-						break;
-					case "D":
-						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.DOWN);
-						break;
-					case "R":
-						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.RIGHT);
-						break;
-					case "L":
-						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.LEFT);
-						break;
-					case "N":
-						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
-						break;
-					}
-				}
-				else {
-					newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
-				}
-				++j;
-			}
-			numColumns = j;
-			++i;
-		}
-		numRows = i;
-		
-		// This is to ensure that our board has no null values in it
-		board = new BoardCell[numRows][numColumns];
-		for (int k = 0; k < numRows; ++k) {
-			for (int l = 0; l < numColumns; ++l) {
-				board[k][l] = new BoardCell(newBoard[k][l].getRow(), newBoard[k][l].getColumn(), newBoard[k][l].getInitial(), newBoard[k][l].getDoorDirection());
-			}
-		}
-		
-		line.close();
-		
+		loadBoardConfig();
 		// This will set up the adjmatrix
 		calcAdjacencies();
 		
@@ -114,6 +62,50 @@ public class Board {
 		
 		legend.close();
 		return;
+	}
+	
+	public void loadBoardConfig() throws FileNotFoundException {
+		FileReader csv = new FileReader(boardConfigFile);
+		Scanner line = new Scanner(csv);
+		
+		int i = 0; //This will be what we use to store our max row values as
+		while (line.hasNextLine()) {
+			int j = 0;	//This is what we will use to store our max column
+			String ln = line.nextLine();
+			String[] a = ln.split(",");
+			
+			// We will go through our array of strings and place them into our board
+			for (String k :a) {
+				// NOTE: we have to see if the string has two characters in it
+				if (k.length() == 2) {
+					String k1 = String.valueOf(k.charAt(1));
+					switch (k1) {
+					case "U":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.UP);
+						break;
+					case "D":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.DOWN);
+						break;
+					case "R":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.RIGHT);
+						break;
+					case "L":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.LEFT);
+						break;
+					case "N":
+						board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
+						break;
+					}
+				}
+				else {
+					board[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
+				}
+				++j;
+			}
+			numColumns = j;
+			++i;
+		}
+		numRows = i;
 	}
 	
 	public void calcAdjacencies() {
