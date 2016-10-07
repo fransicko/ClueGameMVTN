@@ -3,7 +3,11 @@ package clueGame;
 public class BadConfigFormatException extends Exception{
 	
 	public BadConfigFormatException() {
-		super("Some error");
+		super("Not consistent columns");
+	}
+	
+	public BadConfigFormatException(String string) {
+		super(string + " is not in your legend.");
 	}
 
 }

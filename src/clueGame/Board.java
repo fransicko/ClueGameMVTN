@@ -33,7 +33,6 @@ public class Board {
 	
 	// This will setup the board/ csv
 	public void initialize() throws FileNotFoundException {
-		rooms = new HashMap<>();
 		targets = new HashSet<>();
 		visited = new HashSet<>();
 		adjMatrix = new HashMap<>();
@@ -41,8 +40,8 @@ public class Board {
 		// We don't know how big the board is before hand so we have to use
 		// this variable to allocate memory for the board
 		try{
-			loadRoomConfig();
 			loadBoardConfig();
+			loadRoomConfig();
 		} catch (BadConfigFormatException e) {
 			e.fillInStackTrace();
 		}
@@ -72,8 +71,10 @@ public class Board {
 	public void loadRoomConfig() throws FileNotFoundException, BadConfigFormatException {
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
-
+		
+		//This has to be here so that we don't run into a null pointer exception
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		rooms = new HashMap<>();
 		int i = 0; //This will be what we use to store our max row values as
 		while (line.hasNextLine()) {
 			int j = 0;	//This is what we will use to store our max column
@@ -83,6 +84,10 @@ public class Board {
 			// We will go through our array of strings and place them into our board
 			for (String k :a) {
 				// NOTE: we have to see if the string has two characters in it
+				if (!rooms.containsKey(k.charAt(0))) {
+					throw new BadConfigFormatException(k);
+				}
+				
 				if (k.length() == 2) {
 					String k1 = String.valueOf(k.charAt(1));
 					switch (k1) {
