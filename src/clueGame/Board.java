@@ -70,6 +70,9 @@ public class Board {
 					case "L":
 						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.LEFT);
 						break;
+					case "N":
+						newBoard[i][j] = new BoardCell(i, j, k.charAt(0), DoorDirection.NONE);
+						break;
 					}
 				}
 				else {
@@ -86,9 +89,7 @@ public class Board {
 		board = new BoardCell[numRows][numColumns];
 		for (int k = 0; k < numRows; ++k) {
 			for (int l = 0; l < numColumns; ++l) {
-				if (newBoard[k][l] != null) {
-					board[k][l] = new BoardCell(newBoard[k][l].getRow(), newBoard[k][l].getColumn(), newBoard[k][l].getInitial(), newBoard[k][l].getDoorDirection());
-				}
+				board[k][l] = new BoardCell(newBoard[k][l].getRow(), newBoard[k][l].getColumn(), newBoard[k][l].getInitial(), newBoard[k][l].getDoorDirection());
 			}
 		}
 		
