@@ -24,6 +24,8 @@ public class clueBoardAdjTargetTests {
 		board.initialize();
 	}
 
+	// Ensure that player does not move around within room
+	// These cells are ORANGE on the planning spreadsheet
 	@Test
 	public void testAdjacenciesInsideRooms() {
 		//Test side
@@ -44,6 +46,39 @@ public class clueBoardAdjTargetTests {
 		// Test one in a corner of room
 		test = board.getAdjList(board.getCell(25, 20));
 		assertEquals(0, test.size());
+	}
+	
+	// Test adjacency at entrance to rooms
+	// These tests are GREEN in planning spreadsheet
+	@Test
+	public void testAdjacencyDoorways()
+	{
+		// Test beside a door direction RIGHT
+		Set<BoardCell> testList = board.getAdjList(board.getCell(24, 13));
+		assertTrue(testList.contains(board.getCellAt(24, 12)));
+		assertTrue(testList.contains(board.getCellAt(24, 14)));
+		assertTrue(testList.contains(board.getCellAt(25, 13)));
+		assertEquals(3, testList.size());
+		// Test beside a door direction DOWN
+		testList = board.getAdjList(6, 15);
+		assertTrue(testList.contains(board.getCellAt(5, 15)));
+		assertTrue(testList.contains(board.getCellAt(6, 14)));
+		assertTrue(testList.contains(board.getCellAt(6, 16)));
+		assertEquals(3, testList.size());
+		// Test beside a door direction LEFT
+		testList = board.getAdjList(15, 17);
+		assertTrue(testList.contains(board.getCellAt(15, 16)));
+		assertTrue(testList.contains(board.getCellAt(15, 18)));
+		assertTrue(testList.contains(board.getCellAt(14, 17)));
+		assertTrue(testList.contains(board.getCellAt(16, 17)));
+		assertEquals(4, testList.size());
+		// Test beside a door direction UP
+		testList = board.getAdjList(13, 11);
+		assertTrue(testList.contains(board.getCellAt(13, 10)));
+		assertTrue(testList.contains(board.getCellAt(13, 12)));
+		assertTrue(testList.contains(board.getCellAt(12, 11)));
+		assertTrue(testList.contains(board.getCellAt(14, 11)));
+		assertEquals(4, testList.size());
 	}
 
 }
