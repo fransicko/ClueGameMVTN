@@ -104,6 +104,9 @@ public class clueBoardAdjTargetTests {
 		assertTrue(testList.contains(board.getCellAt(3, 9)));
 		assertEquals(4, testList.size());
 	}
+
+	// Test a variety of walkway scenarios
+	// These tests are LIGHT PURPLE on the planning spreadsheet
 	@Test
 	public void testAdjacencyWalkways()
 	{
@@ -186,10 +189,15 @@ public class clueBoardAdjTargetTests {
 
 		board.calcTargets(board.getCell(9, 6), 2);
 		targets= board.getTargets();
-		assertEquals(, targets.size());
+		assertEquals(8, targets.size());
 		assertTrue(targets.contains(board.getCellAt(7, 6)));
-		assertTrue(targets.contains(board.getCellAt(14, 2)));	
-		assertTrue(targets.contains(board.getCellAt(15, 1)));			
+		assertTrue(targets.contains(board.getCellAt(8, 7)));	
+		assertTrue(targets.contains(board.getCellAt(8, 5)));	
+		assertTrue(targets.contains(board.getCellAt(9, 4)));	
+		assertTrue(targets.contains(board.getCellAt(10, 5)));	
+		assertTrue(targets.contains(board.getCellAt(11, 6)));	
+		assertTrue(targets.contains(board.getCellAt(10, 7)));	
+		assertTrue(targets.contains(board.getCellAt(9, 8)));
 	}
 
 	// Tests of just walkways, 4 steps
