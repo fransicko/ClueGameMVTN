@@ -230,13 +230,26 @@ public class clueBoardAdjTargetTests {
 	
 	@Test
 	public void testTargetsFiveSteps() {
-		board.calcTargets(8, 13, 5);
+		board.calcTargets(16, 0, 5);
 		Set<BoardCell> targets= board.getTargets();
-		assertEquals(4, targets.size());
-		assertTrue(targets.contains(board.getCellAt(14, 13)));
-		assertTrue(targets.contains(board.getCellAt(7, 8)));
-		assertTrue(targets.contains(board.getCellAt(8, 7)));
-		assertTrue(targets.contains(board.getCellAt(9, 8)));	
+		assertEquals(13, targets.size());
+		assertTrue(targets.contains(board.getCellAt(16, 5)));
+		assertTrue(targets.contains(board.getCellAt(14, 3)));
+		assertTrue(targets.contains(board.getCellAt(15, 4)));
+		assertTrue(targets.contains(board.getCellAt(17, 4)));
+		assertTrue(targets.contains(board.getCellAt(15, 2)));
+		assertTrue(targets.contains(board.getCellAt(15, 0)));
+		assertTrue(targets.contains(board.getCellAt(17, 4)));
+		assertTrue(targets.contains(board.getCellAt(16, 3)));
+		assertTrue(targets.contains(board.getCellAt(19, 2)));
+		assertTrue(targets.contains(board.getCellAt(17, 2)));
+		assertTrue(targets.contains(board.getCellAt(18, 1)));
+		assertTrue(targets.contains(board.getCellAt(16, 1)));
+		assertTrue(targets.contains(board.getCellAt(17, 0)));
+		// path with not enough length
+		assertTrue(targets.contains(board.getCellAt(14, 0)));
+		
+		
 	}
 
 	@Test
