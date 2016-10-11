@@ -104,5 +104,29 @@ public class clueBoardAdjTargetTests {
 		assertTrue(testList.contains(board.getCellAt(3, 9)));
 		assertEquals(4, testList.size());
 	}
+	
+	
+	
+	// Tests of just walkways, 1 step, includes on edge of board
+	// and beside room
+	// Have already tested adjacency lists on all four edges, will
+	// only test two edges here
+	// These are LIGHT BLUE on the planning spreadsheet
+	@Test
+	public void testTargetsOneStep() {
+		board.calcTargets(board.getCell(0, 5), 1);
+		Set<BoardCell> targets= board.getTargets();
+		assertEquals(2, targets.size());
+		assertTrue(targets.contains(board.getCellAt(0, 6)));
+		assertTrue(targets.contains(board.getCellAt(1, 5)));	
+
+		board.calcTargets(board.getCell(9, 6), 1);
+		targets= board.getTargets();
+		assertEquals(4, targets.size());
+		assertTrue(targets.contains(board.getCellAt(9, 7)));
+		assertTrue(targets.contains(board.getCellAt(9, 5)));	
+		assertTrue(targets.contains(board.getCellAt(8, 6)));	
+		assertTrue(targets.contains(board.getCellAt(10, 6)));			
+	}
 
 }
