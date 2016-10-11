@@ -80,10 +80,9 @@ public class clueBoardAdjTargetTests {
 	{
 		// Test beside a door direction RIGHT
 		Set<BoardCell> testList = board.getAdjList(board.getCell(24, 13));
-		assertTrue(testList.contains(board.getCellAt(24, 12)));
 		assertTrue(testList.contains(board.getCellAt(24, 14)));
 		assertTrue(testList.contains(board.getCellAt(25, 13)));
-		assertEquals(3, testList.size());
+		assertEquals(2, testList.size());
 		// Test beside a door direction DOWN
 		testList = board.getAdjList(board.getCell(17, 10));
 		assertTrue(testList.contains(board.getCellAt(17, 9)));
