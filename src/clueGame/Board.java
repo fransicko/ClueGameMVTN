@@ -14,8 +14,8 @@ public class Board {
 	public static final int MAX_BOARD_SIZE = 50;
 	private int numRows;
 	private int numColumns;
-	private BoardCell[][] board;
-	private Map<Character, String> rooms; // map for legend
+	private BoardCell[][] board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];;
+	private Map<Character, String> rooms = new HashMap<>(); // map for legend
 	private Map<BoardCell, Set<BoardCell>> adjMatrix;
 	private Set<BoardCell> targets;
 	private Set<BoardCell> visited;
@@ -72,9 +72,6 @@ public class Board {
 		FileReader csv = new FileReader(boardConfigFile);
 		Scanner line = new Scanner(csv);
 		
-		//This has to be here so that we don't run into a null pointer exception
-		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
-		rooms = new HashMap<>();
 		int i = 0; //This will be what we use to store our max row values as
 		while (line.hasNextLine()) {
 			int j = 0;	//This is what we will use to store our max column
