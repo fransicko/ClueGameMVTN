@@ -319,12 +319,12 @@ public class clueBoardAdjTargetTests {
 		assertEquals(1, targets.size());
 		assertTrue(targets.contains(board.getCellAt(8, 24)));
 		// Take two steps
-		board.calcTargets(4, 20, 2);
+		board.calcTargets(16, 10, 2);
 		targets= board.getTargets();
 		assertEquals(3, targets.size());
-		assertTrue(targets.contains(board.getCellAt(3, 19)));
-		assertTrue(targets.contains(board.getCellAt(5, 19)));
-		assertTrue(targets.contains(board.getCellAt(4, 18)));
+		assertTrue(targets.contains(board.getCellAt(18, 10)));
+		assertTrue(targets.contains(board.getCellAt(17, 9)));
+		assertTrue(targets.contains(board.getCellAt(17, 11)));
 	}
 }
 
