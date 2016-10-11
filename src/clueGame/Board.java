@@ -125,16 +125,16 @@ public class Board {
 				Set<BoardCell> adj = new HashSet<BoardCell>();
 				// If we are at at a walkway
 				if (board[i][j].getInitial() == 'W') {
-					if (i-1 >= 0 && (board[i-1][j].getInitial() == 'W' || board[i-1][j].getDoorDirection() != DoorDirection.NONE)) {
+					if (i-1 >= 0 && (board[i-1][j].getInitial() == 'W' || board[i-1][j].getDoorDirection() == DoorDirection.DOWN)) {
 						adj.add(board[i-1][j]);
 					}
-					if (i+1 < numRows && (board[i+1][j].getInitial() == 'W' || board[i+1][j].getDoorDirection() != DoorDirection.NONE)) {
+					if (i+1 < numRows && (board[i+1][j].getInitial() == 'W' || board[i+1][j].getDoorDirection() == DoorDirection.UP)) {
 						adj.add(board[i+1][j]);
 					}
-					if (j+1 < numColumns && (board[i][j+1].getInitial() == 'W' || board[i][j+1].getDoorDirection() != DoorDirection.NONE)) {
+					if (j+1 < numColumns && (board[i][j+1].getInitial() == 'W' || board[i][j+1].getDoorDirection() == DoorDirection.LEFT)) {
 						adj.add(board[i][j+1]);
 					}
-					if (j-1 >= 0 && (board[i][j-1].getInitial() == 'W' || board[i][j-1].getDoorDirection() != DoorDirection.NONE)) {
+					if (j-1 >= 0 && (board[i][j-1].getInitial() == 'W' || board[i][j-1].getDoorDirection() == DoorDirection.RIGHT)) {
 						adj.add(board[i][j-1]);
 					}
 				}
