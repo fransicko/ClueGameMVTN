@@ -326,11 +326,11 @@ public class clueBoardAdjTargetTests {
 	public void testRoomExit()
 	{
 		// Take one step, essentially just the adj list
-		board.calcTargets(4, 20, 1);
+		board.calcTargets(7, 24, 1);
 		Set<BoardCell> targets= board.getTargets();
 		// Ensure doesn't exit through the wall
 		assertEquals(1, targets.size());
-		assertTrue(targets.contains(board.getCellAt(4, 19)));
+		assertTrue(targets.contains(board.getCellAt(8, 24)));
 		// Take two steps
 		board.calcTargets(4, 20, 2);
 		targets= board.getTargets();
