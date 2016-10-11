@@ -104,8 +104,53 @@ public class clueBoardAdjTargetTests {
 		assertTrue(testList.contains(board.getCellAt(3, 9)));
 		assertEquals(4, testList.size());
 	}
-	
-	
+	@Test
+	public void testAdjacencyWalkways()
+	{
+		// Test on top edge of board
+		Set<BoardCell> test = board.getAdjList(board.getCellAt(0, 6));
+		assertTrue(test.contains(board.getCellAt(0, 5)));
+		assertTrue(test.contains(board.getCellAt(0, 7)));
+		assertTrue(test.contains(board.getCellAt(1, 6)));
+		assertEquals(3, test.size());
+		
+		// Test on left edge of board
+		test = board.getAdjList(board.getCellAt(6, 0));
+		assertTrue(test.contains(board.getCellAt(5, 0)));
+		assertTrue(test.contains(board.getCellAt(7, 0)));
+		assertTrue(test.contains(board.getCellAt(6, 1)));
+		assertEquals(3, test.size());
+		
+		// Test on bottom edge of board
+		test = board.getAdjList(board.getCellAt(25, 6));
+		assertTrue(test.contains(board.getCellAt(25, 5)));
+		assertTrue(test.contains(board.getCellAt(25, 7)));
+		assertTrue(test.contains(board.getCellAt(24, 6)));
+		assertEquals(3, test.size());
+		
+		// Test on right edge of board
+		test = board.getAdjList(board.getCellAt(18, 25));
+		assertTrue(test.contains(board.getCellAt(17, 25)));
+		assertTrue(test.contains(board.getCellAt(19, 25)));
+		assertTrue(test.contains(board.getCellAt(18, 24)));
+		assertEquals(3, test.size());
+		
+		// Test one inside corner of library
+		test = board.getAdjList(board.getCellAt(19, 2));
+		assertTrue(test.contains(board.getCellAt(19, 1)));
+		assertTrue(test.contains(board.getCellAt(18, 2)));
+		assertEquals(2, test.size());
+		
+		// Test a walkway with 4 adj
+		test = board.getAdjList(board.getCellAt(19, 18));
+		assertTrue(test.contains(board.getCellAt(18, 18)));
+		assertTrue(test.contains(board.getCellAt(19, 19)));
+		assertTrue(test.contains(board.getCellAt(20, 18)));
+		assertTrue(test.contains(board.getCellAt(19, 17)));
+		assertEquals(3, test.size());
+		
+		
+	}
 	
 	// Tests of just walkways, 1 step, includes on edge of board
 	// and beside room
@@ -129,6 +174,7 @@ public class clueBoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(10, 6)));			
 	}
 
+<<<<<<< HEAD
 	// Tests of just walkways, 2 steps
 	// These are LIGHT BLUE on the planning spreadsheet
 	@Test
@@ -188,4 +234,7 @@ public class clueBoardAdjTargetTests {
 	}	
 
 
+=======
+>>>>>>> d7198f5522ed239188b0c2f5eeb6c8974d185a3e
+>>>>>>> b6c62ed61c9a01a4dadcd664f5a00af08fef76a0
 }
