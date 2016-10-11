@@ -278,7 +278,7 @@ public class clueBoardAdjTargetTests {
 		board.calcTargets(20, 5, 2);
 		Set<BoardCell> targets= board.getTargets();
 		assertEquals(7, targets.size());
-		// directly left (can't go right 2 steps)
+		// Into room
 		assertTrue(targets.contains(board.getCellAt(20, 3)));
 		// directly up and down
 		assertTrue(targets.contains(board.getCellAt(18, 5)));
