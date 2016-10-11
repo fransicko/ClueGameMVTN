@@ -263,11 +263,9 @@ public class clueBoardAdjTargetTests {
 	public void testTargetsSixSteps() {
 		board.calcTargets(8, 13, 6);
 		Set<BoardCell> targets= board.getTargets();
-		assertEquals(4, targets.size());
+		assertEquals(2, targets.size());
 		assertTrue(targets.contains(board.getCellAt(14, 13)));
 		assertTrue(targets.contains(board.getCellAt(7, 8)));
-		assertTrue(targets.contains(board.getCellAt(8, 7)));
-		assertTrue(targets.contains(board.getCellAt(9, 8)));	
 	}	
 	
 	// Test getting into a room
