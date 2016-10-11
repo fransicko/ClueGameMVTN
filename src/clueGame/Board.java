@@ -169,6 +169,10 @@ public class Board {
 		return;
 	}
 	
+	public void calcTargets(int row, int col, int length) {
+		calcTargets(board[row][col], length);
+	}
+	
 	public BoardCell getCellAt(int i, int j) {
 		return board[i][j];
 	}
@@ -203,6 +207,9 @@ public class Board {
 	
 	public Set<BoardCell> getAdjList(BoardCell cell) {
 		return adjMatrix.get(cell);
+	}
+	public Set<BoardCell> getAdjList(int row, int col) {
+		return adjMatrix.get(board[row][col]);
 	}
 	public BoardCell getCell(int row, int col) {
 		return board[row][col];
