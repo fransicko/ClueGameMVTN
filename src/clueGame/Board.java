@@ -214,5 +214,6 @@ public class Board {
 	public BoardCell getCell(int row, int col) {
 		return board[row][col];
 	}
-
 }
+
+
