@@ -47,6 +47,31 @@ public class clueBoardAdjTargetTests {
 		test = board.getAdjList(board.getCell(25, 20));
 		assertEquals(0, test.size());
 	}
+
+	// Ensure that the adjacency list from a doorway is only the
+	// walkway.
+	// These tests are PURPLE on the planning spreadsheet
+	@Test
+	public void testAdjacencyRoomExit()
+	{
+		// TEST DOORWAY RIGHT 
+		Set<BoardCell> test = board.getAdjList(board.getCell(11, 2));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(11, 3)));
+		// TEST DOORWAY LEFT 
+		test = board.getAdjList(board.getCell(10, 9));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(10, 8)));
+		//TEST DOORWAY DOWN
+		test = board.getAdjList(board.getCell(16, 10));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(17, 10)));
+		//TEST DOORWAY UP
+		test = board.getAdjList(board.getCell(5, 9));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(4, 9)));
+		
+	}
 	
 	// Test adjacency at entrance to rooms
 	// These tests are GREEN in planning spreadsheet
@@ -80,6 +105,7 @@ public class clueBoardAdjTargetTests {
 		assertEquals(4, testList.size());
 	}
 	
+<<<<<<< HEAD
 	// test pushing
 	@Test
 	public void testAdjacencyWalkways()
@@ -128,4 +154,30 @@ public class clueBoardAdjTargetTests {
 		
 		
 	}
+=======
+	
+	
+	// Tests of just walkways, 1 step, includes on edge of board
+	// and beside room
+	// Have already tested adjacency lists on all four edges, will
+	// only test two edges here
+	// These are LIGHT BLUE on the planning spreadsheet
+	@Test
+	public void testTargetsOneStep() {
+		board.calcTargets(board.getCell(0, 5), 1);
+		Set<BoardCell> targets= board.getTargets();
+		assertEquals(2, targets.size());
+		assertTrue(targets.contains(board.getCellAt(0, 6)));
+		assertTrue(targets.contains(board.getCellAt(1, 5)));	
+
+		board.calcTargets(board.getCell(9, 6), 1);
+		targets= board.getTargets();
+		assertEquals(4, targets.size());
+		assertTrue(targets.contains(board.getCellAt(9, 7)));
+		assertTrue(targets.contains(board.getCellAt(9, 5)));	
+		assertTrue(targets.contains(board.getCellAt(8, 6)));	
+		assertTrue(targets.contains(board.getCellAt(10, 6)));			
+	}
+
+>>>>>>> d7198f5522ed239188b0c2f5eeb6c8974d185a3e
 }
