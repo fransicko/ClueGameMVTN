@@ -1,0 +1,23 @@
+@Test
+	public void testAdjacencyRoomExit()
+	{
+		// TEST DOORWAY RIGHT 
+		Set<BoardCell> test = board.getAdjList(board.getCell(11, 2));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(11, 3)));
+		// TEST DOORWAY LEFT 
+		test = board.getAdjList(board.getCell(10, 9));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(10, 8)));
+		//TEST DOORWAY DOWN
+		test = board.getAdjList(board.getCell(16, 10));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(17, 10)));
+		//TEST DOORWAY UP
+		test = board.getAdjList(board.getCell(5, 9));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(4, 9)));
+		
+	}
+	
+	
