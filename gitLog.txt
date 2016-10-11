@@ -1,0 +1,681 @@
+commit b2af03b43ef5e57d286dcd629d0b7353eccceb1f
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 16:02:29 2016 -0600
+
+    So the problem with our code was that we were testing to see if the walkway to the right of a down door added the door to its adj list, we are good on all fronts.
+
+commit 46a37cab013004dfad176b98a6ea057624b12d4f
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 15:59:56 2016 -0600
+
+    So i fixed our calc adj so that we only add a door to target if we are facing the correct way, now there is something wrong in our tests
+
+commit 5bb1da466b0d8b6337f95b4e704d78bca12d8e5f
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 15:50:46 2016 -0600
+
+    There were some errors in the test room shortcut fixed those now all our tests pass, but one of hers dosen't
+
+commit d0cc27d56131d63d967c821ad241a1f39ab0dac1
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 15:47:44 2016 -0600
+
+    We were not including a value in our size check which was causing an error
+
+commit 8109c4d4b79d0a8e88e3cc80846fee58b6b87ae5
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 15:43:45 2016 -0600
+
+    So there was an error with the six step test, there are actually only two values that can be added to targets not 4
+
+commit 1567016e0415e7b25d7d91c326ba0953e2421d5c
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 20:56:46 2016 -0600
+
+    I added back the condition that The add but changed to checking that it is False and not True
+
+commit 656110891026d2c244f62f38fb9845b14a7af4a4
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 20:55:07 2016 -0600
+
+    Fixed an error in five steps, we were checnking one value twice, and The was looking at a value that was not there.
+
+commit 731dde15ef64f817b28133df8a788c0e06ccc489
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 20:43:41 2016 -0600
+
+    I added in a condition were we could add a door to our targets even if the length is not fully taken. This caused all of her tests to past but all our test have not. It would seem that we combined some of her later tests into our earlier tests.
+
+commit 0cf3258aa867170b6522b4350469da9ca9969bd1
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 20:28:57 2016 -0600
+
+    I added in our getTargets an instance varialbe that would get all the currenty targets and after that it would 'clean out' our current targets. The problem was that we were never getting ride of the old targets so that was causing errors.
+
+commit 8bd0bd9902e84fe2cf1a3e7aacdab5db997be74d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 20:27:31 2016 -0600
+
+    Checking
+
+commit ba391a9fbd5e7a9ef5ebd44ca963a232181a04c8
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 19:58:30 2016 -0600
+
+    Walkways was passable it just had the wrong value put in for testing the size
+
+commit 3c206b810a88fb44c1c2378381c575ef7b5a645a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 19:55:13 2016 -0600
+
+    I solved the room exit by adding in another if-else block. I couldn't think of anything better/ i couldn't see any alternatives to doing it
+
+commit d969e0c25d4fd6d73579c55f4788ae6040fd1a87
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 19:34:08 2016 -0600
+
+    Passed the adj doorway by updating the conditions in the cal adj method
+
+commit a448ee325c4a46ca549f46979ea3a500439b3676
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 11 19:26:18 2016 -0600
+
+    We passed the adjancines inside the room by mvoing some things around in the calcAdj method
+
+commit c9f7c8401be61abf66f0b067e3758be54ad2cdf2
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 20:07:26 2016 -0600
+
+    moved stuff around so that all our test and future tests pass
+
+commit 680c99419a90c5fea11e16577d8388a44458aeb5
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 20:03:15 2016 -0600
+
+    Finished the room exit
+
+commit 609ffef6a2b580ba3c3e9698de3098009ce38464
+Merge: d9c9d65 5d88ef9
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 20:01:05 2016 -0600
+
+    Merge branch 'master' of https://github.com/fransicko/ClueGameMVTN
+
+commit d9c9d65d8c6ffe3ee20c59a4e32dce234ef0b2f9
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 20:01:01 2016 -0600
+
+    IDK
+
+commit 20561458fa7f2b83e8c32ec9ceb739f9d60ec09a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 19:59:47 2016 -0600
+
+    Changed the first exit check
+
+commit 5d88ef9aab1678d00da5d7307bced836b173e9b5
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:59:28 2016 -0600
+
+    remade the room shortcut
+
+commit 23f84398fc9745761b39d50b07dc70080b718f9c
+Merge: fee4188 8e5dce1
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:56:25 2016 -0600
+
+    Merge branch 'master' of https://github.com/fransicko/ClueGameMVTN
+    cause
+
+commit fee4188c970a32e925ba32d741573f07640f8ff5
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:56:17 2016 -0600
+
+    added room shortcut test
+
+commit 8e5dce11736042ae6047c7cb2ea20262c7e85ff1
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 19:55:45 2016 -0600
+
+    Made a change
+
+commit 7c6857b59bea712045768f04c9881f2d0b10e196
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 19:54:56 2016 -0600
+
+    Did the targets into room
+
+commit 769d62ef6167640e1de6552fc4d22204c6670cdd
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:36:58 2016 -0600
+
+    fixed the board.calcTargets
+
+commit 8115d40bff6689fe5aeefadf1cc0d318283dcfed
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:29:47 2016 -0600
+
+    saved excel w/ random comment
+
+commit a61f50552443baa19ae22bb80a549e072e1b3945
+Merge: a8e9219 85bc5c0
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:24:23 2016 -0600
+
+    Merge branch 'master' of https://github.com/fransicko/ClueGameMVTN
+    Cause
+
+commit a8e92192dcddebc44cfc27c6da21bd971e707452
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:23:51 2016 -0600
+
+    Finished 5 steps path
+
+commit 85bc5c024c4bf6b03aa84721753d9c4ef5dbd675
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 19:23:24 2016 -0600
+
+    Added the three step test
+
+commit 704d342c2633ed2e98bbbf5aa89748595680e854
+Merge: b759aa0 f2b7080
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:01:59 2016 -0600
+
+    added 5 steps
+
+commit b759aa0583e00a11e8e947014b6c8766862ddf4e
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Mon Oct 10 19:01:20 2016 -0600
+
+    added 5 steps
+
+commit f2b70806928dabb2c2fbf456940da99cf6bf941b
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 19:00:08 2016 -0600
+
+    Added in some override methods so that way it works with her code
+
+commit ca2e7fd3d481dabf094ebaf5f45932515014c120
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 18:37:03 2016 -0600
+
+    now it shoud be good
+
+commit b35c40166209eb07e664ef368b2cf9ae3807eaf3
+Merge: 4e221e3 b6c62ed
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 18:36:26 2016 -0600
+
+    It worked
+
+commit 4e221e3a2731736f1f1608bca55d5c9a16fd549a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 18:35:33 2016 -0600
+
+    I did some stuff with the two step one
+
+commit b6c62ed61c9a01a4dadcd664f5a00af08fef76a0
+Merge: 04fc35d d7198f5
+Author: The Ngo <The@linuxnewz.com>
+Date:   Mon Oct 10 18:33:18 2016 -0600
+
+    Added the walkway
+
+commit 04fc35dc838b14952b530ac81361e810f54df75c
+Author: The Ngo <The@linuxnewz.com>
+Date:   Mon Oct 10 18:31:49 2016 -0600
+
+    Added the walkway test
+
+commit d7198f5522ed239188b0c2f5eeb6c8974d185a3e
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 18:23:10 2016 -0600
+
+    I implemented the one step test, will add the other ones
+
+commit c23f8e25978f8edfdb37a33ba57ce0c07931d1af
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 18:11:49 2016 -0600
+
+    Moved stuff from text over
+
+commit e3bf75fdf0d74171f975c27004962e66f8df481f
+Author: The Ngo <The@linuxnewz.com>
+Date:   Mon Oct 10 18:08:50 2016 -0600
+
+    added a comment to test pushing on laptop
+
+commit 97a184fd45c5e9d97b97d4a42d616f60b0533d4a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 18:06:32 2016 -0600
+
+    Added the adj beside room entrance test
+
+commit 317689075960eede02057293d1b6f6499cb33a53
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 17:58:08 2016 -0600
+
+    Added some doorway direction
+
+commit ecadb1acb00445df5d26092de3fc483e5a33994d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 17:50:34 2016 -0600
+
+    I finished test adj inside room, and i updated the spreadsheet
+
+commit ca5c35fd573c2055a99f42de02e00a1c347f8884
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 10 17:08:38 2016 -0600
+
+    Created the new tests
+
+commit f488e3533886ac7aea0349f11bfcb7f057eaeab2
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Sat Oct 8 17:00:26 2016 -0600
+
+    Added her test to our project
+
+commit 6a0524d84047edddf22faa2f029e63e9cccee66b
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 19:39:40 2016 -0600
+
+    I moved the allocation of rooms into our room config method, this has also lead to the passing of the third test which we are doing nothing with.
+
+commit 802b4b8638de829defe389e0255f1406737c8243
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 19:27:00 2016 -0600
+
+    We managed to sovle the testbad columns test.
+
+commit f71ea663aa9d94ab6d045cbea122b3244a84e959
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Thu Oct 6 19:07:19 2016 -0600
+
+    Added some try/catch idea
+
+commit 081767e3b234d48d81f052e17d4c049e2a55c01c
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 18:51:33 2016 -0600
+
+    Changed the name of room and board
+
+commit 062827069405ceaf18aca28d10af404b7c544946
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 18:18:53 2016 -0600
+
+    stuff
+
+commit 69385e2337695fd99e001ec6f1aa5a548aaafd10
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 18:17:58 2016 -0600
+
+    Made a new loadBoardConfig and added stuff from the initialize into it
+
+commit 0a436bf4e3fa262a2caed2a1efda4ae3d8e6108d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 18:04:54 2016 -0600
+
+    We figured out he problem with testing the door ways
+
+commit 8c98b51a0bc8d9307f7a1daf521c8058a21be158
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 17:49:36 2016 -0600
+
+    We solved the spacing problem.
+
+commit 7a6b46ed50437b7f90fbbe4c0b11a73dfa0e3c00
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 17:16:58 2016 -0600
+
+    Cell change
+
+commit 6b2f8a1e00e5178d6da91eda6a33ad9f15342a03
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 17:01:12 2016 -0600
+
+    All the test pass for us now
+
+commit e7e554ed80f9dceaae124fbdd85c61a7aad5947d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 16:57:58 2016 -0600
+
+    Changed the B to an R. We likely mistyped
+
+commit 92c48c92318fc47d2a89999c73fd0a507c12496d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 16:53:53 2016 -0600
+
+    The numDoors test works now. It failed because we have a board that is bigger than what we need it to be.
+
+commit c9417edb47c81af0efae32fa055886a26a050a40
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 16:50:31 2016 -0600
+
+    So the error was that i was not incrementing i when we were going through it
+
+commit 458a4648013f87c771a0014d4e082e7b467661b4
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 16:03:50 2016 -0600
+
+    The error is that none of the values are being added to our rooms or anything.
+
+commit 9cf7d50be3fc8c1d4c9f458d6e2cd5c383c3862e
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 15:58:57 2016 -0600
+
+    Good news, I was able to make the code initialize and now i have get the errors to not be errors and make the tests pass.
+
+commit c1d74e9665e6c282186a1589930b84bfc0d295d3
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 15:27:07 2016 -0600
+
+    So the solution to the problem is to allocate memory using the max board size varaible
+
+commit 2b872b34036f489a66c0a27f866c92b1eb55cc34
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 14:57:51 2016 -0600
+
+    So an error that i have is that we have to know the size of rows and columns before we can add things to our board.
+
+commit ff3f017ae03cca1f1d8d248668f3b841c451d994
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 14:42:38 2016 -0600
+
+    Added the line to set up the adjMatrix. I'm going to start testing the code with the Junits
+
+commit b2277bf9e3a031df2fd180e7deea298183cb94ad
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 14:40:31 2016 -0600
+
+    I added up the set up for calculating the num cols and rows
+
+commit ea6b09e20133298a2b67831a34c9dae0d2747905
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 14:33:13 2016 -0600
+
+    So i started to add to the initialization method. I set the code so that if the string has two characters then we check the value of that second char and use it to set up the DoorDirection. If there is no second character then its direction is none.
+
+commit d4fc394267124bb8216e3b94b4d33bf7c74ff464
+Author: The Ngo <The@linuxnewz.com>
+Date:   Thu Oct 6 12:49:11 2016 -0600
+
+    Fixed reading in legend
+
+commit a0240aab4d8aa1b5266269db7c509a1bd2065cdf
+Merge: 4d4b634 5c3806b
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Thu Oct 6 12:23:08 2016 -0600
+
+    Merge branch 'master' of https://github.com/fransicko/ClueGameMVTN
+    Redo Merg
+
+commit 5c3806b3ba6faaded5224a678ed81e9ce67fd605
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 12:16:59 2016 -0600
+
+    Changed the format of our csv file
+
+commit 4d4b63419f8b5f5c317e8cd0e1e8ed081c5a90ce
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Thu Oct 6 12:10:54 2016 -0600
+
+    Read legend and put into Map
+
+commit 2eeef9cfea0292222fae9eb2082918551ba5e173
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:58:34 2016 -0600
+
+    I had to change the name of the function for getting the rooms so that way it would match hers
+
+commit 8c25de3a95a8b54ffce8d396767adc30883262ec
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:49:15 2016 -0600
+
+    Changed the string values in DoorDirection. Fixed some errors in the csv and change stuff in her tests
+
+commit e4ca260e84689956b452ffcfa3db0c576879408c
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:37:46 2016 -0600
+
+    Moved get cell
+
+commit d896566235adba957ac891aa0b0d9af4829f8019
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:35:34 2016 -0600
+
+    Changed the file to csv in code
+
+commit c4b60c029e8356d08c614d89cbd3a12983e18249
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:34:18 2016 -0600
+
+    I took the methods from intboard and added them to board since they use the same stuff here and there
+
+commit 64501e5d944dfa7719835f3e4fec2dcc195ba51a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:23:50 2016 -0600
+
+    This is our csv file
+
+commit 5075eab9f3a041198c915a1956669531c5053e5f
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Thu Oct 6 11:03:27 2016 -0600
+
+    Added her test exceptions
+
+commit 214aeab3a25bc0a96eba89cefe71193c68e14d8d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Wed Oct 5 11:10:09 2016 -0600
+
+    I made and saved the text document
+
+commit 25b23ec0c20e59bd2ee18fd64addf51f61c9a149
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Wed Oct 5 10:50:39 2016 -0600
+
+    Finished the tests
+
+commit 3b8754a6b43f48bc21e7271793fded5d7cb15a59
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Wed Oct 5 10:39:07 2016 -0600
+
+    Added numDoor test
+
+commit c5effe9c589790262ab9fcd5d55c7b3e42a29d92
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Wed Oct 5 10:26:45 2016 -0600
+
+    Know i'm done with fourDoors test
+
+commit 564c09501eae7f9de9ceaef8a14ea2327f19267b
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Wed Oct 5 10:21:59 2016 -0600
+
+    Added the test to test to make sure we have four different opening doors
+
+commit ed55b845aebd569ad420aa11ec8196423b22d401
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 16:39:37 2016 -0600
+
+    I implemented the testSize test, it just test to make sure that there are the correct number of rows and columns.
+
+commit 02914f9a0b9a3d51a6f10f8f6fc644864a25507d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 16:13:14 2016 -0600
+
+    I implemented the testLegend test, all it does is check to make sure our layout is correct.
+
+commit af24f0e2043474c99edf3f7308804b5c2ab0b560
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:56:46 2016 -0600
+
+    saved
+
+commit aecc44778a58e4a4b862ef09f3196e6a093bc6d4
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:56:04 2016 -0600
+
+    So the, don't worry about implementing any of the stuff, it is just like paths were we just made the tests and let the code fail.
+
+commit f210ba289b69bb72f78c388221f17e6db6b357ec
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:41:57 2016 -0600
+
+    So we made a mistake. For the layout and legend we can only use on character to represent the room, so the rooms like Gr(garage) i had to change the char value. Similarly i had change what they were inside the excel sheet
+
+commit 979a57f6caeefc2f00d7daef139ced9ff7d70a28
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:30:40 2016 -0600
+
+    So i added our layout and legend to our project and i renamed them to MT_ so that way ppl know its our stuff
+
+commit 8eebaf7a15ed0bfdd9e8c1c985363ae25b96841a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:23:20 2016 -0600
+
+    So the, the point of this assignment is to make failing tests using her test as a guidline
+
+commit ea02a9000c9395f457ba31020e5ba4edd67fe080
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:16:13 2016 -0600
+
+    Know i added the class to the project
+
+commit 1bf5385ab357fe0990856c11d90084f6a728c0a7
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 15:12:51 2016 -0600
+
+    I added the BadconfigFormatException
+
+commit 051ff8570e23d4f2fab1fa2ece4c15ec8acdd701
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:36:00 2016 -0600
+
+    moved java files over
+
+commit 551d2c376c9278caa7901193b249c7d3cb03896f
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:30:08 2016 -0600
+
+    Added in the other functions
+
+commit 57f82db532610e5d50b75c626e5c487bdf470252
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:26:29 2016 -0600
+
+    moved files to clueGame
+
+commit 937932608cf82b78df8bde850aebcc859d4f2bec
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:18:38 2016 -0600
+
+    added directions
+
+commit 590207e56afa99f769629802faae922fe3ebb7df
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:17:34 2016 -0600
+
+    I changed door direction back to a class and i finished BoardCell functions
+
+commit 34b687c6d3e6b907dad05d16df0c34767b8bbd0b
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:09:13 2016 -0600
+
+    changed dorr direction to a varialbe in boardCell
+
+commit 6346d1b18de6fb93334c06e4af1bc2f0afec3e29
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 12:04:22 2016 -0600
+
+    added initial to baordCell and other functions. Also made an enumerator for dorr direction
+
+commit 15b2362bc812282b0fabdcd7f16d48decece4f04
+Author: The Ngo <thngo@adit.mines.edu>
+Date:   Tue Oct 4 11:48:02 2016 -0600
+
+    Added more of the stuff from UML
+
+commit ff3186249e7089c654f6ffbd8b61c29549b1ab18
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 11:44:55 2016 -0600
+
+    added all the data to teh thing
+
+commit 8bee17697928d8446b6bdcd95a71f5ff6ffa58b8
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 11:42:12 2016 -0600
+
+    added things to clueGame
+
+commit cd03de46bf0f961b279c14897e6f703e56990d3e
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Tue Oct 4 11:34:15 2016 -0600
+
+    Added a fill to be tracked
+
+commit 87005120e73faa6d0b43e46c9ce19cab615dccf9
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 3 19:42:27 2016 -0600
+
+    I implemented the Calctargets
+
+commit 5f21fe28d89f3701d37a8c5f258f9343c768dc92
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 3 18:57:22 2016 -0600
+
+    I implemented calcAdjacencies
+
+commit 342542423f94c94adc26e69a62e36fc8a0b0f49d
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 3 11:45:52 2016 -0600
+
+    I added the other three directions to calcAdj and i added them to the map.
+
+commit 3dcd2e4ec8f6f8f59d27ee13f4166313fac48e89
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Mon Oct 3 11:36:48 2016 -0600
+
+    I added some getters for BoardCell and i added some private variables to IntBoard so that way we know how big the game board is. Started working on clacAdjacencies did south check.
+
+commit 0a1e3546b1f9c5f7920d5a2f4cd5c2d66bd5e2ef
+Author: The Ngo <The@linuxnewz.com>
+Date:   Fri Sep 30 19:03:22 2016 -0600
+
+    This is to test git on laptop
+
+commit 73e8b5ef1bf52885b64173901023f91c130ddf42
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Fri Sep 30 18:54:45 2016 -0600
+
+    Making and filling out the test cases
+
+commit 611d05729642487a17a6516b70b741f2723a6abf
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Fri Sep 30 11:12:33 2016 -0600
+
+    So i'm just fleshing out the functions. It says that we need to sumbit the failed tests so at the moment i think we just make sure that the constructors are working then make the test and sumbit the errors
+
+commit 6247dce0910801efa26a27dd34bfab4ef10babba
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Fri Sep 30 10:38:37 2016 -0600
+
+    I'm just adding the stuff into the classes. Need to see what we should add to a constructor.
+
+commit 65b4f26dc54bbd75aa029e28a120572baa3dfb2a
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Fri Sep 30 10:18:06 2016 -0600
+
+    Creating classes
+
+commit a1e708e28fe7f96c46692f87aabd0881fc0e0230
+Author: Michael Villafuerte <mvillafu@mymail.mines.edu>
+Date:   Fri Sep 30 10:10:16 2016 -0600
+
+    Starting up
+
+commit 3dad4ddc91c0ffa071e2c4eb2c6a47a9202baf18
+Author: fransicko <mvillafu@mymail.mines.edu>
+Date:   Fri Sep 30 10:02:38 2016 -0600
+
+    Initial commit
