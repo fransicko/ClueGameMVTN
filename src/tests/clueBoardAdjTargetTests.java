@@ -173,8 +173,6 @@ public class clueBoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(8, 6)));	
 		assertTrue(targets.contains(board.getCellAt(10, 6)));			
 	}
-
-<<<<<<< HEAD
 	// Tests of just walkways, 2 steps
 	// These are LIGHT BLUE on the planning spreadsheet
 	@Test
@@ -234,7 +232,3 @@ public class clueBoardAdjTargetTests {
 	}	
 
 
-=======
->>>>>>> d7198f5522ed239188b0c2f5eeb6c8974d185a3e
->>>>>>> b6c62ed61c9a01a4dadcd664f5a00af08fef76a0
-}
