@@ -268,5 +268,7 @@ public class clueBoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(8, 7)));
 		assertTrue(targets.contains(board.getCellAt(9, 8)));	
 	}	
+	
+	//random comment
 }
 
