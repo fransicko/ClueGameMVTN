@@ -299,10 +299,10 @@ public class clueBoardAdjTargetTests {
 	{
 		board.calcTargets(25, 12, 2);
 		Set<BoardCell> targets= board.getTargets();
-		assertEquals(12, targets.size());
+		assertEquals(4, targets.size());
 		// directly right/left
-		assertTrue(targets.contains(board.getCellAt(25, 11)));
-		assertTrue(targets.contains(board.getCellAt(25, 13)));
+		assertTrue(targets.contains(board.getCellAt(25, 10)));
+		assertTrue(targets.contains(board.getCellAt(25, 14)));
 		// right then up
 		assertTrue(targets.contains(board.getCellAt(24, 13)));
 		// into the rooms
