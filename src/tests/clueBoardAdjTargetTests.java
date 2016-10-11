@@ -276,7 +276,7 @@ public class clueBoardAdjTargetTests {
 		// One room is exactly 2 away
 		board.calcTargets(20, 5, 2);
 		Set<BoardCell> targets= board.getTargets();
-		assertEquals(7, targets.size());
+		assertEquals(8, targets.size());
 		// Into room
 		assertTrue(targets.contains(board.getCellAt(20, 3)));
 		// directly up and down
@@ -287,6 +287,9 @@ public class clueBoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(19, 6)));
 		assertTrue(targets.contains(board.getCellAt(21, 4)));
 		assertTrue(targets.contains(board.getCellAt(21, 6)));
+		// Directly right
+		assertTrue(targets.contains(board.getCellAt(20, 7)));
+		
 	}
 
 	// Test getting into room, doesn't require all steps
