@@ -79,5 +79,53 @@ public class clueBoardAdjTargetTests {
 		assertTrue(testList.contains(board.getCellAt(3, 9)));
 		assertEquals(4, testList.size());
 	}
-
+	
+	// test pushing
+	@Test
+	public void testAdjacencyWalkways()
+	{
+		// Test on top edge of board
+		Set<BoardCell> test = board.getAdjList(board.getCellAt(0, 6));
+		assertTrue(test.contains(board.getCellAt(0, 5)));
+		assertTrue(test.contains(board.getCellAt(0, 7)));
+		assertTrue(test.contains(board.getCellAt(1, 6)));
+		assertEquals(3, test.size());
+		
+		// Test on left edge of board
+		test = board.getAdjList(board.getCellAt(6, 0));
+		assertTrue(test.contains(board.getCellAt(5, 0)));
+		assertTrue(test.contains(board.getCellAt(7, 0)));
+		assertTrue(test.contains(board.getCellAt(6, 1)));
+		assertEquals(3, test.size());
+		
+		// Test on bottom edge of board
+		test = board.getAdjList(board.getCellAt(25, 6));
+		assertTrue(test.contains(board.getCellAt(25, 5)));
+		assertTrue(test.contains(board.getCellAt(25, 7)));
+		assertTrue(test.contains(board.getCellAt(24, 6)));
+		assertEquals(3, test.size());
+		
+		// Test on right edge of board
+		test = board.getAdjList(board.getCellAt(18, 25));
+		assertTrue(test.contains(board.getCellAt(17, 25)));
+		assertTrue(test.contains(board.getCellAt(19, 25)));
+		assertTrue(test.contains(board.getCellAt(18, 24)));
+		assertEquals(3, test.size());
+		
+		// Test one inside corner of library
+		test = board.getAdjList(board.getCellAt(19, 2));
+		assertTrue(test.contains(board.getCellAt(19, 1)));
+		assertTrue(test.contains(board.getCellAt(18, 2)));
+		assertEquals(2, test.size());
+		
+		// Test a walkway with 4 adj
+		test = board.getAdjList(board.getCellAt(19, 18));
+		assertTrue(test.contains(board.getCellAt(18, 18)));
+		assertTrue(test.contains(board.getCellAt(19, 19)));
+		assertTrue(test.contains(board.getCellAt(20, 18)));
+		assertTrue(test.contains(board.getCellAt(19, 17)));
+		assertEquals(3, test.size());
+		
+		
+	}
 }
