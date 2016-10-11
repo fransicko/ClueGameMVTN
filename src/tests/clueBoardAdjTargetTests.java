@@ -47,6 +47,31 @@ public class clueBoardAdjTargetTests {
 		test = board.getAdjList(board.getCell(25, 20));
 		assertEquals(0, test.size());
 	}
+
+	// Ensure that the adjacency list from a doorway is only the
+	// walkway.
+	// These tests are PURPLE on the planning spreadsheet
+	@Test
+	public void testAdjacencyRoomExit()
+	{
+		// TEST DOORWAY RIGHT 
+		Set<BoardCell> test = board.getAdjList(board.getCell(11, 2));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(11, 3)));
+		// TEST DOORWAY LEFT 
+		test = board.getAdjList(board.getCell(10, 9));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(10, 8)));
+		//TEST DOORWAY DOWN
+		test = board.getAdjList(board.getCell(16, 10));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(17, 10)));
+		//TEST DOORWAY UP
+		test = board.getAdjList(board.getCell(5, 9));
+		assertEquals(1, test.size());
+		assertTrue(test.contains(board.getCellAt(4, 9)));
+		
+	}
 	
 	// Test adjacency at entrance to rooms
 	// These tests are GREEN in planning spreadsheet
