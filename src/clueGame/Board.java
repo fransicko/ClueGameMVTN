@@ -16,9 +16,9 @@ public class Board {
 	private int numColumns;
 	private BoardCell[][] board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];;
 	private Map<Character, String> rooms = new HashMap<>(); // map for legend
-	private Map<BoardCell, Set<BoardCell>> adjMatrix;
-	private Set<BoardCell> targets;
-	private Set<BoardCell> visited;
+	private Map<BoardCell, Set<BoardCell>> adjMatrix = new HashMap<>();
+	private Set<BoardCell> targets = new HashSet<>();
+	private Set<BoardCell> visited = new HashSet<>();
 	private String boardConfigFile;
 	private String roomConfigFile;
 	
@@ -33,10 +33,6 @@ public class Board {
 	
 	// This will setup the board/ csv
 	public void initialize() throws FileNotFoundException {
-		targets = new HashSet<>();
-		visited = new HashSet<>();
-		adjMatrix = new HashMap<>();
-		
 		// We don't know how big the board is before hand so we have to use
 		// this variable to allocate memory for the board
 		try{
@@ -127,21 +123,23 @@ public class Board {
 		for (int i = 0; i < numRows; ++i) {
 			for (int j = 0; j < numColumns; ++j) {
 				Set<BoardCell> adj = new HashSet<BoardCell>();
-				if (i-1 >= 0) {
-					adj.add(board[i-1][j]);
+				if (board[i][j].getInitial() == 'W' || board[i][j].getDoorDirection() != DoorDirection.NONE){
+					if (i-1 >= 0) {
+						adj.add(board[i-1][j]);
+					}
+					if (i+1 < numRows) {
+						adj.add(board[i+1][j]);
+					}
+					if (j+1 < numColumns) {
+						adj.add(board[i][j+1]);
+					}
+					if (j-1 >= 0) {
+						adj.add(board[i][j-1]);
+					}
 				}
-				if (i+1 < numRows) {
-					adj.add(board[i+1][j]);
-				}
-				if (j+1 < numColumns) {
-					adj.add(board[i][j+1]);
-				}
-				if (j-1 >= 0) {
-					adj.add(board[i][j-1]);
-				}
-				
 				adjMatrix.put(board[i][j], new HashSet<BoardCell>(adj));
 				adj.clear();
+				
 			}
 		}
 		
