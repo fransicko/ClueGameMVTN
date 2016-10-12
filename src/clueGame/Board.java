@@ -123,17 +123,17 @@ public class Board {
 		for (int i = 0; i < numRows; ++i) {
 			for (int j = 0; j < numColumns; ++j) {
 				Set<BoardCell> adj = new HashSet<BoardCell>();
-				if (board[i][j].getInitial() == 'W' || board[i][j].getDoorDirection() != DoorDirection.NONE){
-					if (i-1 >= 0) {
+				if (board[i][j].getInitial() == 'W' || board[i][j].getDoorDirection() != DoorDirection.NONE) {
+					if (i-1 >= 0 && (board[i-1][j].getInitial() == 'W' || board[i-1][j].getDoorDirection() != DoorDirection.NONE)) {
 						adj.add(board[i-1][j]);
 					}
-					if (i+1 < numRows) {
+					if (i+1 < numRows && (board[i+1][j].getInitial() == 'W' || board[i+1][j].getDoorDirection() != DoorDirection.NONE)) {
 						adj.add(board[i+1][j]);
 					}
-					if (j+1 < numColumns) {
+					if (j+1 < numColumns && (board[i][j+1].getInitial() == 'W' || board[i][j+1].getDoorDirection() != DoorDirection.NONE)) {
 						adj.add(board[i][j+1]);
 					}
-					if (j-1 >= 0) {
+					if (j-1 >= 0 && (board[i][j-1].getInitial() == 'W' || board[i][j-1].getDoorDirection() != DoorDirection.NONE)) {
 						adj.add(board[i][j-1]);
 					}
 				}
