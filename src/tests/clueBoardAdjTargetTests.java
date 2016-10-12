@@ -253,6 +253,8 @@ public class clueBoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(18, 1)));
 		assertTrue(targets.contains(board.getCellAt(16, 1)));
 		assertTrue(targets.contains(board.getCellAt(17, 0)));
+		//Check to make sure its not adding this value
+		assertFalse(targets.contains(board.getCellAt(14, 0)));
 
 
 	}
