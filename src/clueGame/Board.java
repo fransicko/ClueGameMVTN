@@ -123,7 +123,8 @@ public class Board {
 		for (int i = 0; i < numRows; ++i) {
 			for (int j = 0; j < numColumns; ++j) {
 				Set<BoardCell> adj = new HashSet<BoardCell>();
-				if (board[i][j].getInitial() == 'W' || board[i][j].getDoorDirection() != DoorDirection.NONE) {
+				// If we are at at a walkway
+				if (board[i][j].getInitial() == 'W') {
 					if (i-1 >= 0 && (board[i-1][j].getInitial() == 'W' || board[i-1][j].getDoorDirection() != DoorDirection.NONE)) {
 						adj.add(board[i-1][j]);
 					}
@@ -134,6 +135,21 @@ public class Board {
 						adj.add(board[i][j+1]);
 					}
 					if (j-1 >= 0 && (board[i][j-1].getInitial() == 'W' || board[i][j-1].getDoorDirection() != DoorDirection.NONE)) {
+						adj.add(board[i][j-1]);
+					}
+				}
+				// if we are in a door check were it opens and add that spot
+				else if (board[i][j].getDoorDirection() != DoorDirection.NONE) {
+					if (board[i][j].getDoorDirection() == DoorDirection.UP) {
+						adj.add(board[i-1][j]);
+					}
+					else if (board[i][j].getDoorDirection() == DoorDirection.DOWN) {
+						adj.add(board[i+1][j]);
+					}
+					else if (board[i][j].getDoorDirection() == DoorDirection.RIGHT) {
+						adj.add(board[i][j+1]);
+					}
+					else {
 						adj.add(board[i][j-1]);
 					}
 				}
