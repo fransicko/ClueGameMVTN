@@ -207,7 +207,10 @@ public class Board {
 		return adjMatrix;
 	}
 	public Set<BoardCell> getTargets() {
-		return targets;
+		// We are never cleaning our targets set so i'm adding them to a new set and cleaning the old set
+		Set<BoardCell> curTargets = new HashSet<>(targets);
+		targets = new HashSet<BoardCell>();
+		return curTargets;
 	}
 	public BoardCell[][] getBoard() {
 		return board;
