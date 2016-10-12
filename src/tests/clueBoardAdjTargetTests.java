@@ -150,7 +150,7 @@ public class clueBoardAdjTargetTests {
 		assertTrue(test.contains(board.getCellAt(19, 19)));
 		assertTrue(test.contains(board.getCellAt(20, 18)));
 		assertTrue(test.contains(board.getCellAt(19, 17)));
-		assertEquals(3, test.size());
+		assertEquals(4, test.size());
 		
 		
 	}
