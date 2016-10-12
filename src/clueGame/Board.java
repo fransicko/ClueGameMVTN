@@ -208,9 +208,9 @@ public class Board {
 	}
 	public Set<BoardCell> getTargets() {
 		// We are never cleaning our targets set so i'm adding them to a new set and cleaning the old set
-		Set<BoardCell> curTargets = new HashSet<>(targets);
+		Set<BoardCell> currTargets = new HashSet<>(targets);
 		targets = new HashSet<BoardCell>();
-		return curTargets;
+		return currTargets;
 	}
 	public BoardCell[][] getBoard() {
 		return board;
