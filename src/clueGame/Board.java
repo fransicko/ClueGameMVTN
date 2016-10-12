@@ -167,7 +167,7 @@ public class Board {
 		for (BoardCell i: adjMatrix.get(startCell)) {
 			if (!visited.contains(i)) {
 				visited.add(i);
-				if (pathLength == 1) {
+				if (pathLength == 1 || i.getDoorDirection() != DoorDirection.NONE) {
 					targets.add(i);
 					visited.remove(i);
 				}

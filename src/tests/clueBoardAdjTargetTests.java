@@ -223,12 +223,15 @@ public class clueBoardAdjTargetTests {
 	public void testTargetsFourSteps() {
 		board.calcTargets(25, 12, 4);
 		Set<BoardCell> targets= board.getTargets();
-		assertEquals(5, targets.size());
+		assertEquals(8, targets.size());
 		assertTrue(targets.contains(board.getCellAt(23, 14)));
 		assertTrue(targets.contains(board.getCellAt(24, 15)));
 		assertTrue(targets.contains(board.getCellAt(25, 16)));
 		assertTrue(targets.contains(board.getCellAt(24, 9)));
 		assertTrue(targets.contains(board.getCellAt(25, 8)));
+		assertTrue(targets.contains(board.getCellAt(24, 13)));
+		assertTrue(targets.contains(board.getCellAt(25, 14)));
+		assertTrue(targets.contains(board.getCellAt(24, 12)));
 	}	
 
 	// Tests of just walkways plus one door, 6 steps
