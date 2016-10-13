@@ -78,7 +78,7 @@ public class clueBoardTests {
 		
 		for (BoardCell[] i: board.getBoard()) {
 			for (BoardCell j: i) {
-				if (j.isDoorway()) {
+				if (j != null && j.isDoorway()) {
 					++door;
 				}
 			}
